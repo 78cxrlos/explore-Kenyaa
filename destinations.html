@@ -3,6 +3,33 @@
 <head>
 <title>Destinations</title>
 <link rel="stylesheet" href="style.css">
+
+<!-- Added internal CSS for Best Time to Visit -->
+<style>
+/* Style for the Best Time to Visit result box */
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 15px 20px;
+    background: #f0f8ff;               /* light blue background */
+    border-left: 6px solid #0077b6;    /* colored accent bar */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 1.1em;
+    color: #023e8a;                    /* dark blue text */
+    transition: all 0.3s ease;
+}
+
+/* Optional: animate background when it changes */
+#result.show {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
 
 <body>
@@ -66,7 +93,7 @@
 </select>
 </form>
 
-<p id="result" style="margin-top:20px; font-weight:bold;"></p>
+<p id="result"></p>
 
 </div>
 
@@ -162,6 +189,11 @@ function showTime() {
     else {
         result.innerHTML = "";
     }
+
+    // Add animation class for visual effect
+    result.classList.remove("show");   // reset
+    void result.offsetWidth;            // trigger reflow
+    result.classList.add("show");
 }
 </script>
 
