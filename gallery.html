@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Explore Kenya</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="destinations.html">Destinations</a>
+<a href="gallery.html">Gallery</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<main>
+
+<h2 style="text-align:center;">Gallery</h2>
+
+<div class="slideshow">
+
+<div class="slide">
+<img src="images/nairobi.jpg" alt="Nairobi skyline">
+</div>
+
+<div class="slide">
+<img src="images/mombasa.jpg" alt="Mombasa beach">
+</div>
+
+<div class="slide">
+<img src="images/masaimara.jpg" alt="Masai Mara wildlife">
+</div>
+
+<div class="slide">
+<img src="images/diani.jpg" alt="Diani beach">
+</div>
+
+<span class="prev" onclick="plusSlides(-1)">❮</span>
+<span class="next" onclick="plusSlides(1)">❯</span>
+
+</div>
+
+</main>
+
+<footer>
+<p>&copy; 2026 Explore Kenya</p>
+</footer>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    slideIndex += n;
+    showSlides(slideIndex);
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("slide");
+
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+}
+
+setInterval(function() {
+    plusSlides(1);
+}, 4000);
+</script>
+
+</body>
+</html>

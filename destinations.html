@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Destinations</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Explore Kenya</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="destinations.html">Destinations</a>
+<a href="gallery.html">Gallery</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<main>
+
+<div class="section">
+<h2>Top Destinations</h2>
+
+<div class="card-container">
+
+<div class="card">
+<img src="images/nairobi.jpg" alt="Skyline view of Nairobi city">
+<h3>Nairobi</h3>
+<p>Kenya’s capital with wildlife parks and vibrant city life.</p>
+</div>
+
+<div class="card">
+<img src="images/mombasa.jpg" alt="Mombasa beach coastline">
+<h3>Mombasa</h3>
+<p>Coastal city known for beaches and historical sites.</p>
+</div>
+
+<div class="card">
+<img src="images/masaimara.jpg" alt="Wild animals in Masai Mara">
+<h3>Masai Mara</h3>
+<p>Top safari destination with amazing wildlife.</p>
+</div>
+
+<div class="card">
+<img src="images/diani.jpg" alt="White sand beach in Diani">
+<h3>Diani</h3>
+<p>White sand beaches and clear blue waters.</p>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h2>Best Time to Visit</h2>
+
+<form>
+<label for="place">Select Destination:</label>
+<select id="place" onchange="showTime()">
+<option value="">Choose a place</option>
+<option value="nairobi">Nairobi</option>
+<option value="mombasa">Mombasa</option>
+<option value="masaimara">Masai Mara</option>
+<option value="diani">Diani</option>
+</select>
+</form>
+
+<p id="result" style="margin-top:20px; font-weight:bold;"></p>
+
+</div>
+
+</main>
+
+<footer>
+<p>&copy; 2026 Explore Kenya</p>
+</footer>
+
+<script>
+function showTime() {
+    let place = document.getElementById("place").value;
+    let result = document.getElementById("result");
+
+    if (place === "nairobi") {
+        result.innerHTML = "Best time to visit Nairobi is all year round.";
+    } 
+    else if (place === "mombasa") {
+        result.innerHTML = "Best time to visit Mombasa is December to February.";
+    } 
+    else if (place === "masaimara") {
+        result.innerHTML = "Best time to visit Masai Mara is July to October.";
+    } 
+    else if (place === "diani") {
+        result.innerHTML = "Best time to visit Diani is December to March.";
+    } 
+    else {
+        result.innerHTML = "";
+    }
+}
+</script>
+
+</body>
+</html>
